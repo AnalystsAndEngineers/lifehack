@@ -1,6 +1,6 @@
-"use client";
+'use client';
 
-import React from "react";
+import React from 'react';
 import {
   Navbar,
   Collapse,
@@ -21,7 +21,9 @@ import {
   Bars2Icon,
   BellAlertIcon,
   GiftIcon,
-} from "@heroicons/react/24/outline";
+} from '@heroicons/react/24/outline';
+
+import {MdOutlineLeaderboard} from "react-icons/md"
 
 import { useRouter } from "next/navigation";
 
@@ -41,14 +43,13 @@ function ProfileMenu() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   //   const closeMenu = () => setIsMenuOpen(false);
   const router = useRouter();
-
   return (
     <Menu open={isMenuOpen} handler={setIsMenuOpen} placement="bottom-end">
       <MenuHandler>
         <Button
           variant="text"
           color="blue-gray"
-          className="flex items-center gap-1 rounded-full py-0.5 pr-2 pl-0.5 lg:ml-auto"
+          className="flex items-center gap-1 rounded-full py-0.5 pl-0.5 pr-2 lg:ml-auto"
         >
           <Avatar
             variant="circular"
@@ -87,8 +88,8 @@ function ProfileMenu() {
               <Typography
                 as="span"
                 variant="small"
-                className="font-semibold font-montserrat"
-                color={isLastItem ? "red" : "inherit"}
+                className="font-montserrat font-semibold"
+                color={isLastItem ? 'red' : 'inherit'}
               >
                 {label}
               </Typography>
@@ -102,19 +103,16 @@ function ProfileMenu() {
 
 const announcements = [
   {
-    title: "Announcement 1",
-    description:
-      "Learn how to use @material-tailwind/html, packed with rich components and widgets.",
+    title: 'Announcement 1',
+    description: 'Learn how to use @material-tailwind/html, packed with rich components and widgets.',
   },
   {
-    title: "@material-tailwind/react",
-    description:
-      "Learn how to use @material-tailwind/react, packed with rich components for React.",
+    title: '@material-tailwind/react',
+    description: 'Learn how to use @material-tailwind/react, packed with rich components for React.',
   },
   {
-    title: "Material Tailwind PRO",
-    description:
-      "A complete set of UI Elements for building faster websites in less time.",
+    title: 'Material Tailwind PRO',
+    description: 'A complete set of UI Elements for building faster websites in less time.',
   },
 ];
 
@@ -192,15 +190,17 @@ function NavListMenu() {
 
 // nav list component
 const navListItems = [
-  {
-    label: "Employees",
-    icon: UserCircleIcon,
-    routeLink: "/employees",
-  },
-  {
-    label: "Welfare",
-    icon: GiftIcon,
-    routeLink: "/welfare",
+    {
+        label: "Employees",
+        icon: UserCircleIcon,
+    },
+    {
+        label: "Welfare",
+        icon: GiftIcon,
+    },
+    {
+      label: "Leaderboard",
+      icon: MdOutlineLeaderboard,
   },
 ];
 
@@ -239,9 +239,38 @@ export default function ComplexNavbar() {
   const toggleIsNavOpen = () => setIsNavOpen((cur) => !cur);
 
   React.useEffect(() => {
-    window.addEventListener(
-      "resize",
-      () => window.innerWidth >= 960 && setIsNavOpen(false)
+    window.addEventListener('resize', () => window.innerWidth >= 960 && setIsNavOpen(false));
+  }, []);
+
+    return (
+        <Navbar className="mx-auto w-screen p-2 lg:rounded-full lg:my-5">
+            <div className="relative mx-auto flex justify-between items-center text-blue-gray-900">
+                <Typography
+                    as="a"
+                    href="#"
+                    className="mr-4 ml-2 cursor-pointer py-1.5 font-medium font-montserrat"
+                >
+                    WorkJoy
+                </Typography>
+                <div className="absolute top-2/4 left-2/4 hidden -translate-x-2/4 -translate-y-2/4 lg:block">
+                    <NavList />
+                </div>
+                {/* <div className="">test</div> */}
+                <IconButton
+                    size="sm"
+                    color="blue-gray"
+                    variant="text"
+                    onClick={toggleIsNavOpen}
+                    className="ml-auto mr-2 lg:hidden"
+                >
+                    <Bars2Icon className="h-6 w-6" />
+                </IconButton>
+                <ProfileMenu />
+            </div>
+            <Collapse open={isNavOpen} className="overflow-scroll">
+                <NavList />
+            </Collapse>
+        </Navbar>
     );
   }, []);
 

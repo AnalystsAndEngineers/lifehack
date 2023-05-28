@@ -8,7 +8,7 @@ export default function Card({ title, indicator, desc, routeLink }) {
   function handleClick() {
     router.push(routeLink);
   }
-  return (
+  return ( 
     <div className=" lg:py-7 lg:w-1/5 text-gray-800 mt-10 mx-auto w-6/12 p-6 bg-white border border-gray-200 rounded-xl shadow-lg">
       <div className="flex justify-end text-right text-2xl lg:text-3xl font-bolder">
         <button
