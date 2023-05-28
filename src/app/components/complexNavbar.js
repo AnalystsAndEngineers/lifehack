@@ -23,6 +23,8 @@ import {
   GiftIcon,
 } from '@heroicons/react/24/outline';
 
+import {MdOutlineLeaderboard} from "react-icons/md"
+
 // profile menu component
 const profileMenuItems = [
   {
@@ -155,13 +157,17 @@ function NavListMenu() {
 
 // nav list component
 const navListItems = [
-  {
-    label: 'Employees',
-    icon: UserCircleIcon,
-  },
-  {
-    label: 'Welfare',
-    icon: GiftIcon,
+    {
+        label: "Employees",
+        icon: UserCircleIcon,
+    },
+    {
+        label: "Welfare",
+        icon: GiftIcon,
+    },
+    {
+      label: "Leaderboard",
+      icon: MdOutlineLeaderboard,
   },
 ];
 
@@ -198,29 +204,34 @@ export default function ComplexNavbar() {
     window.addEventListener('resize', () => window.innerWidth >= 960 && setIsNavOpen(false));
   }, []);
 
-  return (
-    <Navbar className="mx-auto max-w-screen-xl p-2 lg:my-5 lg:rounded-full lg:pl-6">
-      <div className="relative mx-auto flex items-center text-blue-gray-900">
-        <Typography as="a" href="#" className="font-montserrat ml-2 mr-4 cursor-pointer py-1.5 font-medium">
-          WorkJoy
-        </Typography>
-        <div className="absolute left-2/4 top-2/4 hidden -translate-x-2/4 -translate-y-2/4 lg:block">
-          <NavList />
-        </div>
-        <IconButton
-          size="sm"
-          color="blue-gray"
-          variant="text"
-          onClick={toggleIsNavOpen}
-          className="ml-auto mr-2 lg:hidden"
-        >
-          <Bars2Icon className="h-6 w-6" />
-        </IconButton>
-        <ProfileMenu />
-      </div>
-      <Collapse open={isNavOpen} className="overflow-scroll">
-        <NavList />
-      </Collapse>
-    </Navbar>
-  );
+    return (
+        <Navbar className="mx-auto w-screen p-2 lg:rounded-full lg:my-5">
+            <div className="relative mx-auto flex justify-between items-center text-blue-gray-900">
+                <Typography
+                    as="a"
+                    href="#"
+                    className="mr-4 ml-2 cursor-pointer py-1.5 font-medium font-montserrat"
+                >
+                    WorkJoy
+                </Typography>
+                <div className="absolute top-2/4 left-2/4 hidden -translate-x-2/4 -translate-y-2/4 lg:block">
+                    <NavList />
+                </div>
+                {/* <div className="">test</div> */}
+                <IconButton
+                    size="sm"
+                    color="blue-gray"
+                    variant="text"
+                    onClick={toggleIsNavOpen}
+                    className="ml-auto mr-2 lg:hidden"
+                >
+                    <Bars2Icon className="h-6 w-6" />
+                </IconButton>
+                <ProfileMenu />
+            </div>
+            <Collapse open={isNavOpen} className="overflow-scroll">
+                <NavList />
+            </Collapse>
+        </Navbar>
+    );
 }
