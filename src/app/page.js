@@ -1,11 +1,9 @@
-import ComplexNavbar from './components/complexNavbar';
 import Card from './components/card';
 import AnnouncementHeader from './components/announcementHeader';
 
 export default function Home() {
   return (
-    <main>
-      <ComplexNavbar />
+    <>
       <div className="flex justify-center">
         <AnnouncementHeader />
       </div>
@@ -14,6 +12,6 @@ export default function Home() {
         <Card title="Off Days" indicator="2" desc="remaining" />
         <Card title="MCs" indicator="3" desc="remaining" />
       </div>
-    </main>
+    </>
   );
 }
