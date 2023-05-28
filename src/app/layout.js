@@ -1,5 +1,6 @@
 import "./globals.scss";
 import { ThemeProvider } from "./components/themeprovider";
+
 import { Montserrat } from "next/font/google";
 
 const montserrat = Montserrat({ subsets: ["latin"] });
