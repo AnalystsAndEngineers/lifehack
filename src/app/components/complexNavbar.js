@@ -23,7 +23,7 @@ import {
   GiftIcon,
 } from "@heroicons/react/24/outline";
 
-// import { useRouter } from "next/navigation";
+import { useRouter } from "next/navigation";
 
 // profile menu component
 const profileMenuItems = [
@@ -39,7 +39,8 @@ const profileMenuItems = [
 
 function ProfileMenu() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
-  const closeMenu = () => setIsMenuOpen(false);
+  //   const closeMenu = () => setIsMenuOpen(false);
+  const router = useRouter();
 
   return (
     <Menu open={isMenuOpen} handler={setIsMenuOpen} placement="bottom-end">
@@ -70,7 +71,9 @@ function ProfileMenu() {
           return (
             <MenuItem
               key={label}
-              onClick={closeMenu}
+              onClick={() => {
+                router.push("/editprofile");
+              }}
               className={`flex items-center gap-2 rounded${
                 isLastItem
                   ? "hover:bg-red-500/10 focus:bg-red-500/10 active:bg-red-500/10"
@@ -192,18 +195,21 @@ const navListItems = [
   {
     label: "Employees",
     icon: UserCircleIcon,
+    routeLink: "/employees",
   },
   {
     label: "Welfare",
     icon: GiftIcon,
+    routeLink: "/welfare",
   },
 ];
 
 function NavList() {
+  const router = useRouter();
   return (
     <ul className="mb-4 mt-2 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center">
       <NavListMenu />
-      {navListItems.map(({ label, icon }) => (
+      {navListItems.map(({ label, icon, routeLink }) => (
         <Typography
           key={label}
           as="a"
@@ -211,6 +217,10 @@ function NavList() {
           variant="small"
           color="blue-gray"
           className="font-semibold font-montserrat"
+          onClick={() => {
+            console.log("hey");
+            router.push(routeLink);
+          }}
         >
           <MenuItem className="flex items-center gap-2 lg:rounded-full">
             {React.createElement(icon, {
