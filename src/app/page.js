@@ -7,7 +7,6 @@ import CompanyCalendar from "./components/companyCalendar";
 export default function Home() {
   return (
     <main>
-      <ComplexNavbar />
       <CompanyCalendar/>
       <AnnouncementHeader title='Company retreat at Yishun SAFRA' desc="Our annual company outing will take place on Saturday. Don't forget to RSVP!"/>
       <div className="block lg:flex">
