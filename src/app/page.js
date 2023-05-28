@@ -1,6 +1,6 @@
-import ComplexNavbar from "./components/complexNavbar";
-import Card from "./components/card";
-import AnnouncementHeader from "./components/announcementHeader";
+import ComplexNavbar from './components/complexNavbar';
+import Card from './components/card';
+import AnnouncementHeader from './components/announcementHeader';
 
 export default function Home() {
   return (
