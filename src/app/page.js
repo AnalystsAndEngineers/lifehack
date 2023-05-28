@@ -1,4 +1,4 @@
-import ComplexNavbar from "./components/navbar";
+import ComplexNavbar from "./components/complexNavbar";
 import Card from "./components/card";
 import AnnouncementHeader from "./components/announcementHeader";
 
