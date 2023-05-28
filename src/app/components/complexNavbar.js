@@ -56,9 +56,7 @@ function ProfileMenu() {
           />
           <ChevronDownIcon
             strokeWidth={2.5}
-            className={`h-3 w-3 transition-transform ${
-              isMenuOpen ? 'rotate-180' : ''
-            }`}
+            className={`h-3 w-3 transition-transform ${isMenuOpen ? 'rotate-180' : ''}`}
           />
         </Button>
       </MenuHandler>
@@ -70,9 +68,7 @@ function ProfileMenu() {
               key={label}
               onClick={closeMenu}
               className={`flex items-center gap-2 rounded${
-                isLastItem
-                  ? 'hover:bg-red-500/10 focus:bg-red-500/10 active:bg-red-500/10'
-                  : ''
+                isLastItem ? 'hover:bg-red-500/10 focus:bg-red-500/10 active:bg-red-500/10' : ''
               }`}
             >
               {React.createElement(icon, {
@@ -98,18 +94,15 @@ function ProfileMenu() {
 const announcements = [
   {
     title: 'Announcement 1',
-    description:
-      'Learn how to use @material-tailwind/html, packed with rich components and widgets.',
+    description: 'Learn how to use @material-tailwind/html, packed with rich components and widgets.',
   },
   {
     title: '@material-tailwind/react',
-    description:
-      'Learn how to use @material-tailwind/react, packed with rich components for React.',
+    description: 'Learn how to use @material-tailwind/react, packed with rich components for React.',
   },
   {
     title: 'Material Tailwind PRO',
-    description:
-      'A complete set of UI Elements for building faster websites in less time.',
+    description: 'A complete set of UI Elements for building faster websites in less time.',
   },
 ];
 
@@ -124,18 +117,10 @@ function NavListMenu() {
   const renderItems = announcements.map(({ title, description }) => (
     <a href="#" key={title}>
       <MenuItem>
-        <Typography
-          variant="h6"
-          color="blue-gray"
-          className="font-montserrat mb-1"
-        >
+        <Typography variant="h6" color="blue-gray" className="font-montserrat mb-1">
           {title}
         </Typography>
-        <Typography
-          variant="small"
-          color="gray"
-          className="font-montserrat font-normal"
-        >
+        <Typography variant="small" color="gray" className="font-montserrat font-normal">
           {description}
         </Typography>
       </MenuItem>
@@ -146,41 +131,24 @@ function NavListMenu() {
     <React.Fragment>
       <Menu open={isMenuOpen} handler={setIsMenuOpen}>
         <MenuHandler>
-          <Typography
-            as="a"
-            href="#"
-            variant="small"
-            className="font-montserrat font-semibold"
-          >
-            <MenuItem
-              {...triggers}
-              className="hidden items-center gap-2 text-blue-gray-900 lg:flex lg:rounded-full"
-            >
+          <Typography as="a" href="#" variant="small" className="font-montserrat font-semibold">
+            <MenuItem {...triggers} className="hidden items-center gap-2 text-blue-gray-900 lg:flex lg:rounded-full">
               <BellAlertIcon className="h-[18px] w-[18px]" /> Announcements{' '}
               <ChevronDownIcon
                 strokeWidth={2}
-                className={`h-3 w-3 transition-transform ${
-                  isMenuOpen ? 'rotate-180' : ''
-                }`}
+                className={`h-3 w-3 transition-transform ${isMenuOpen ? 'rotate-180' : ''}`}
               />
             </MenuItem>
           </Typography>
         </MenuHandler>
-        <MenuList
-          {...triggers}
-          className="font-montserrat hidden w-[36rem] gap-3 overflow-visible lg:grid"
-        >
-          <ul className="col-span-4 flex w-full flex-col gap-1">
-            {renderItems}
-          </ul>
+        <MenuList {...triggers} className="font-montserrat hidden w-[36rem] gap-3 overflow-visible lg:grid">
+          <ul className="col-span-4 flex w-full flex-col gap-1">{renderItems}</ul>
         </MenuList>
       </Menu>
       <MenuItem className="flex items-center gap-2 text-blue-gray-900 lg:hidden">
         <BellAlertIcon className="h-[18px] w-[18px]" /> Announcements{' '}
       </MenuItem>
-      <ul className="ml-6 flex w-full flex-col gap-1 lg:hidden">
-        {renderItems}
-      </ul>
+      <ul className="ml-6 flex w-full flex-col gap-1 lg:hidden">{renderItems}</ul>
     </React.Fragment>
   );
 }
@@ -227,20 +195,13 @@ export default function ComplexNavbar() {
   const toggleIsNavOpen = () => setIsNavOpen((cur) => !cur);
 
   React.useEffect(() => {
-    window.addEventListener(
-      'resize',
-      () => window.innerWidth >= 960 && setIsNavOpen(false)
-    );
+    window.addEventListener('resize', () => window.innerWidth >= 960 && setIsNavOpen(false));
   }, []);
 
   return (
     <Navbar className="mx-auto max-w-screen-xl p-2 lg:my-5 lg:rounded-full lg:pl-6">
       <div className="relative mx-auto flex items-center text-blue-gray-900">
-        <Typography
-          as="a"
-          href="#"
-          className="font-montserrat ml-2 mr-4 cursor-pointer py-1.5 font-medium"
-        >
+        <Typography as="a" href="#" className="font-montserrat ml-2 mr-4 cursor-pointer py-1.5 font-medium">
           WorkJoy
         </Typography>
         <div className="absolute left-2/4 top-2/4 hidden -translate-x-2/4 -translate-y-2/4 lg:block">

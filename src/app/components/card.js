@@ -4,12 +4,8 @@ export default function Card({ title, indicator, desc }) {
       <div className="text-center">
         <h1 className="text-xl font-semibold lg:text-3xl">{title}</h1>
         <div className="block justify-center text-center">
-          <h1 className="pt-5 text-4xl font-semibold text-cyan-600 lg:text-7xl lg:font-bold ">
-            {indicator}
-          </h1>
-          <h1 className=" pt-5 text-lg font-semibold lg:block lg:text-2xl">
-            {desc}
-          </h1>
+          <h1 className="pt-5 text-4xl font-semibold text-cyan-600 lg:text-7xl lg:font-bold ">{indicator}</h1>
+          <h1 className=" pt-5 text-lg font-semibold lg:block lg:text-2xl">{desc}</h1>
         </div>
       </div>
     </div>
