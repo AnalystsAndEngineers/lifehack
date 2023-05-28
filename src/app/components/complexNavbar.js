@@ -23,6 +23,8 @@ import {
     GiftIcon,
 } from "@heroicons/react/24/outline";
 
+import {MdOutlineLeaderboard} from "react-icons/md"
+
 // profile menu component
 const profileMenuItems = [
     {
@@ -199,6 +201,10 @@ const navListItems = [
         label: "Welfare",
         icon: GiftIcon,
     },
+    {
+      label: "Leaderboard",
+      icon: MdOutlineLeaderboard,
+  },
 ];
 
 function NavList() {
@@ -238,8 +244,8 @@ export default function ComplexNavbar() {
     }, []);
 
     return (
-        <Navbar className="mx-auto max-w-screen-xl p-2 lg:rounded-full lg:pl-6 lg:my-5">
-            <div className="relative mx-auto flex items-center text-blue-gray-900">
+        <Navbar className="mx-auto w-screen p-2 lg:rounded-full lg:my-5">
+            <div className="relative mx-auto flex justify-between items-center text-blue-gray-900">
                 <Typography
                     as="a"
                     href="#"
@@ -250,6 +256,7 @@ export default function ComplexNavbar() {
                 <div className="absolute top-2/4 left-2/4 hidden -translate-x-2/4 -translate-y-2/4 lg:block">
                     <NavList />
                 </div>
+                {/* <div className="">test</div> */}
                 <IconButton
                     size="sm"
                     color="blue-gray"

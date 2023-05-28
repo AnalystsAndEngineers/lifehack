@@ -10,6 +10,7 @@ export const metadata = {
     description: "Making work a joy",
 };
 
+
 export default function RootLayout({ children }) {
     return (
         <ThemeProvider>

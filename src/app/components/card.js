@@ -1,6 +1,6 @@
 export default function Card({ title, indicator, desc }) {
   return (
-    <div className="lg:flex lg:justify-center lg:py-16 lg:w-1/5 text-gray-800 mt-10 mx-auto w-6/12 p-6 bg-white border border-gray-200 rounded-xl shadow-lg">
+    <div className="lg:flex lg:justify-center lg:py-16 lg:w-1/5 text-gray-800 mx-auto w-6/12 p-6 bg-white border border-gray-200 rounded-xl shadow-lg my-5 ">
       <div className="text-center">
         <h1 className="font-semibold lg:text-3xl text-xl">
           {title}
