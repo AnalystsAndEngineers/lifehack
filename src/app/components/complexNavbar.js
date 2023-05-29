@@ -217,7 +217,7 @@ export default function ComplexNavbar() {
   }, []);
 
   return (
-    <Navbar className="mx-auto w-screen p-2 lg:rounded-full lg:my-5">
+    <Navbar className="mx-auto max-w-screen-2xl p-2 lg:rounded-full lg:pl-6 lg:mt-10">
       <div className="relative mx-auto flex justify-between items-center text-blue-gray-900">
         <Typography as="a" href="#" className="mr-4 ml-2 cursor-pointer py-1.5 font-medium font-montserrat">
           WorkJoy
