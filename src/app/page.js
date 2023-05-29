@@ -1,7 +1,11 @@
+'use client';
+
 import Card from './components/card';
 import AnnouncementHeader from './components/announcementHeader';
 import FortuneCookie from './components/fortunecookie';
 import CompanyCalendar from './components/companyCalendar';
+import MoodPopup from './components/moodPopup';
+import { useState } from 'react';
 
 const events = [
   {
@@ -39,9 +43,11 @@ const events = [
 ];
 
 export default function Home() {
+  const [chosenMood, setChosenMood] = useState(null);
   return (
     <main>
-      {/* <div className='cursor-pointer' onClick={test}>Click me</div> */}
+      {/* <MoodPopup mood={chosenMood} setChosenMood={setChosenMood} /> */}
+      {!chosenMood && <MoodPopup mood={chosenMood} setChosenMood={setChosenMood} />}
       <CompanyCalendar events={events} />
       <AnnouncementHeader
         title="Company retreat at Yishun SAFRA"

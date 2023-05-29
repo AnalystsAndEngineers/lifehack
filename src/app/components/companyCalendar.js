@@ -18,9 +18,9 @@ export default function CompanyCalendar({ events }) {
     <div>
       <div className="my-5 text-center font-semibold text-cyan-800">Upcoming Events</div>
       <div className="mx-auto my-5 grid max-h-24 w-9/12 grid-cols-1 overflow-hidden rounded-xl border-2 hover:overflow-auto">
-        {events.map((event) => (
+        {events.map((event, index) => (
           <div
-            key={event.id}
+            key={index}
             className="flex cursor-pointer bg-gray-100 p-4 hover:bg-gray-300"
             onClick={() => openPopup(event)}
           >
