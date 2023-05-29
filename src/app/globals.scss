@@ -1,4 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url("https://fonts.googleapis.com/css?family=Montserrat");
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+@layer {
+  .btn-primary {
+    @apply rounded-full bg-cyan-600 px-6 py-4 font-semibold shadow-lg;
+  }
+}

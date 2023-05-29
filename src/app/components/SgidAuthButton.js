@@ -24,11 +24,7 @@ export default function SgidAuthButton() {
   const { icon, path, text } = data[isLoggedIn ? 'logout' : 'login'];
 
   return (
-    <Link
-      href={path}
-      prefetch={false}
-      className="fixed right-0 top-0 m-5 flex gap-2 rounded-full bg-cyan-600 px-6 py-4 font-semibold text-white shadow-lg"
-    >
+    <Link href={path} prefetch={false} className="btn-primary fixed right-0 top-0 m-5 flex gap-2 text-white">
       <div>
         {React.createElement(icon, {
           className: 'h-[24px] w-[24px]',
