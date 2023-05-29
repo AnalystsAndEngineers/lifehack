@@ -15,7 +15,7 @@ export default function FortuneCookie() {
             redirect: 'follow'
           };
           
-          fetch("http://localhost:3000/api/quote", requestOptions)
+          fetch("/api/quote", requestOptions)
             .then(response => response.text())
             .then(result => setQuote(result))
             .catch(error => console.log('error', error));
