@@ -1,9 +1,7 @@
-import ComplexNavbar from './components/complexNavbar';
 import Card from './components/card';
 import AnnouncementHeader from './components/announcementHeader';
 import FortuneCookie from './components/fortunecookie';
 import CompanyCalendar from './components/companyCalendar';
-import { BiHistory } from 'react-icons/bi';
 
 const events = [
   {
@@ -43,6 +41,7 @@ const events = [
 export default function Home() {
   return (
     <main>
+      {/* <div className='cursor-pointer' onClick={test}>Click me</div> */}
       <CompanyCalendar events={events} />
       <AnnouncementHeader
         title="Company retreat at Yishun SAFRA"

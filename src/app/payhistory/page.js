@@ -38,24 +38,24 @@ export default function PayHistory() {
         <h1> Payment History</h1>
       </div>
       <div className="overflow-auto max-h-[60vh]">
-        <table class="w-4/12 mx-auto rounded-xl text-md text-center text-gray-800">
-          <thead class="text-sm text-gray-700 uppercase bg-gray-50 ">
+        <table className="w-4/12 mx-auto rounded-xl text-md text-center text-gray-800">
+          <thead className="text-sm text-gray-700 uppercase bg-gray-50 ">
             <tr>
-              <th scope="col" class="px-6 py-3 border-b">
+              <th scope="col" className="px-6 py-3 border-b">
                 Date
               </th>
-              <th scope="col" class="px-6 py-3 border-b">
+              <th scope="col" className="px-6 py-3 border-b">
                 Amount
               </th>
             </tr>
           </thead>
           <tbody className="">
             {data.map((item, index) => (
-              <tr key={index} class="bg-white border-b ">
-                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+              <tr key={index} className="bg-white border-b ">
+                <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
                   {item.date}
                 </th>
-                <td class="px-6 py-4">${item.amount}</td>
+                <td className="px-6 py-4">${item.amount}</td>
               </tr>
             ))}
           </tbody>
