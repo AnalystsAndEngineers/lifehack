@@ -3,6 +3,7 @@ import { ThemeProvider } from './components/themeprovider';
 
 import { Montserrat } from 'next/font/google';
 import ComplexNavbar from './components/complexNavbar';
+import SgidAuthButton from './components/SgidAuthButton';
 
 const montserrat = Montserrat({ subsets: ['latin'] });
 
@@ -11,7 +12,6 @@ export const metadata = {
   description: 'Making work a joy',
 };
 
-
 export default function RootLayout({ children }) {
   return (
     <ThemeProvider>
@@ -19,6 +19,7 @@ export default function RootLayout({ children }) {
         <body className={montserrat.className}>
           <main>
             <ComplexNavbar />
+            <SgidAuthButton />
             {children}
           </main>
         </body>
