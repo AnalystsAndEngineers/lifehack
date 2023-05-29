@@ -21,11 +21,11 @@ import {
   Bars2Icon,
   BellAlertIcon,
   GiftIcon,
+  RocketLaunchIcon,
 } from '@heroicons/react/24/outline';
 
 import { MdOutlineLeaderboard } from 'react-icons/md';
 import { AiOutlineHome } from 'react-icons/ai';
-
 import { useRouter } from 'next/navigation';
 
 // profile menu component
@@ -100,16 +100,17 @@ function ProfileMenu() {
 
 const announcements = [
   {
-    title: 'Announcement 1',
-    description: 'Learn how to use @material-tailwind/html, packed with rich components and widgets.',
+    title: 'Company retreat at Yishun SAFRA',
+    description: 'Our annual company outing will take place on Saturday. Remember to RSVP!',
   },
   {
-    title: '@material-tailwind/react',
-    description: 'Learn how to use @material-tailwind/react, packed with rich components for React.',
+    title: 'End of year report submission',
+    description: 'Gentle reminder that each departments yearly report has to be submitted by 28 December, 9pm.',
   },
   {
-    title: 'Material Tailwind PRO',
-    description: 'A complete set of UI Elements for building faster websites in less time.',
+    title: 'Launch of My AI',
+    description:
+      'We are excited to introduce our websites new feature, MyAI! Plan your daily schedules and more, using this tool.',
   },
 ];
 
@@ -176,6 +177,11 @@ const navListItems = [
     label: 'Leaderboard',
     icon: MdOutlineLeaderboard,
     routeLink: '/leaderboard',
+  },
+  {
+    label: 'MyAI',
+    icon: RocketLaunchIcon,
+    routeLink: '/myai',
   },
 ];
 
