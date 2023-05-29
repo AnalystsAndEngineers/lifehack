@@ -24,7 +24,7 @@ export default function Form() {
   }
   return (
     <form>
-      <div className="px-14 py-1 lg:py-20 lg:px-48">
+      <div className="px-14 py-1 lg:px-48">
         <div className="">
           <div className="">
             <div className=" border-gray-900/10 pb-12">

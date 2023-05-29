@@ -3,7 +3,6 @@ import AnnouncementHeader from './components/announcementHeader';
 import FortuneCookie from './components/fortunecookie';
 import CompanyCalendar from './components/companyCalendar';
 
-
 const events = [
   {
     date: new Date(),
@@ -46,7 +45,7 @@ export default function Home() {
       <CompanyCalendar events={events} />
       <AnnouncementHeader
         title="Company retreat at Yishun SAFRA"
-        desc="Our annual company outing will take place on Saturday. Don't forget to RSVP!"
+        desc="Our annual company outing will take place on Saturday. Remember to RSVP!"
       />
       <div className="text-center font-semibold text-cyan-800">Benefits</div>
       <div className="block lg:flex">
