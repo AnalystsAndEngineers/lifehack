@@ -21,12 +21,34 @@ export default function LeaderBoard() {
 
   return (
     <div>
-      <div className="flex justify-center mt-20 text-2xl font-semibold text-gray-800">
+      <div className="mt-10 flex justify-center">
+        <div class="w-8/12 rounded-lg border border-gray-200 bg-white p-6 text-center shadow dark:border-gray-700 dark:bg-gray-800">
+          <svg
+            class="mx-auto mb-2 h-10 w-10 text-cyan-500 dark:text-gray-400"
+            aria-hidden="true"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M5 5a3 3 0 015-2.236A3 3 0 0114.83 6H16a2 2 0 110 4h-5V9a1 1 0 10-2 0v1H4a2 2 0 110-4h1.17C5.06 5.687 5 5.35 5 5zm4 1V5a1 1 0 10-1 1h1zm3 0a1 1 0 10-1-1v1h1z"
+              clip-rule="evenodd"
+            ></path>
+            <path d="M9 11H3v5a2 2 0 002 2h4v-7zM11 18h4a2 2 0 002-2v-5h-6v7z"></path>
+          </svg>
+
+          <h5 class="mb-2 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">Prize of the Month</h5>
+          <p>$10 FoodPanda Voucher up for grabs!</p>
+        </div>
+      </div>
+
+      <div className="mt-14 flex justify-center text-2xl font-semibold text-gray-800">
         <h1 className="mr-3">Top 15 Rankings </h1> <GrTrophy className="mt-1" />
       </div>
-      <div className="mt-10 relative sm:rounded-lg overflow-auto max-h-[70vh]">
-        <table className="w-8/12 mx-auto text-sm text-left text-gray-500">
-          <thead className="text-base  text-gray-700 uppercase bg-gray-50 ">
+      <div className="relative mb-5 mt-10 max-h-[60vh] overflow-auto sm:rounded-lg">
+        <table className="mx-auto w-8/12 text-left text-sm text-gray-500">
+          <thead className="bg-gray-50  text-base uppercase text-gray-700 ">
             <tr>
               <th scope="col" className="px-6 py-3">
                 Name
@@ -44,12 +66,12 @@ export default function LeaderBoard() {
           </thead>
           <tbody className="text-base">
             {data.map((item, index) => (
-              <tr key={index} className="bg-white border-b ">
-                <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+              <tr key={index} className="border-b bg-white ">
+                <th scope="row" className="whitespace-nowrap px-6 py-4 font-medium text-gray-900">
                   {item.name}
                 </th>
                 <td className="px-6 py-4">{item.dept}</td>
-                <td className="px-6 py-4">{item.tasks} tasks</td>
+                <td className="px-6 py-4">{item.tasks} points</td>
                 <td className="px-6 py-4">{item.rank}</td>
               </tr>
             ))}
