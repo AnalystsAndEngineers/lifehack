@@ -54,7 +54,7 @@ export default function Home() {
         desc="Our annual company outing will take place on Saturday. Remember to RSVP!"
       />
       <div className="text-center font-semibold text-cyan-800">Benefits</div>
-      <div className="block lg:flex">
+      <div className="mb-10 block lg:flex">
         <Card title="Paycheck in" indicator="10" desc="more days" routeLink="/payhistory" btnText="View history" />
         <Card title="Off Days" indicator="2" desc="remaining" routeLink="/applyleave" btnText="Apply now" />
         <Card title="MCs" indicator="3" desc="remaining" routeLink="/applyleave" btnText="Apply now" />
