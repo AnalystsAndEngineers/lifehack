@@ -25,7 +25,7 @@ export default function SearchBar({ data, onFilteredData }) {
   return (
     <form>
       <div className="relative">
-        <div className="absolute inset-y-0 left-0 flex items-center pl-28 pointer-events-none">
+        <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-28">
           {/* <svg
             aria-hidden="true"
             className="w-5 h-5 text-gray-500 dark:text-gray-400"
@@ -45,7 +45,7 @@ export default function SearchBar({ data, onFilteredData }) {
         <input
           type="search"
           id="default-search"
-          className="block mx-auto w-8/12 mt-10 p-4 pl-6 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+          className="mx-auto mt-10 block w-8/12 rounded-lg border border-gray-300 bg-gray-100 p-4 pl-6 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
           placeholder="Search Employees"
           required
           value={searchQuery}
