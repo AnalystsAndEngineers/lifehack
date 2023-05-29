@@ -46,7 +46,6 @@ export default function Home() {
   const [chosenMood, setChosenMood] = useState(null);
   return (
     <main>
-      {/* <MoodPopup mood={chosenMood} setChosenMood={setChosenMood} /> */}
       {!chosenMood && <MoodPopup mood={chosenMood} setChosenMood={setChosenMood} />}
       <CompanyCalendar events={events} />
       <AnnouncementHeader
