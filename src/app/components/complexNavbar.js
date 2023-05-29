@@ -24,6 +24,7 @@ import {
 } from '@heroicons/react/24/outline';
 
 import { MdOutlineLeaderboard } from 'react-icons/md';
+import { AiOutlineHome } from 'react-icons/ai';
 
 import { useRouter } from 'next/navigation';
 
@@ -164,17 +165,17 @@ const navListItems = [
   {
     label: 'Employees',
     icon: UserCircleIcon,
-    routeLink: "/employees"
+    routeLink: '/employees',
   },
   {
     label: 'Welfare',
     icon: GiftIcon,
-    routeLink: "/welfare"
+    routeLink: '/welfare',
   },
   {
     label: 'Leaderboard',
     icon: MdOutlineLeaderboard,
-    routeLink: "/leaderboard"
+    routeLink: '/leaderboard',
   },
 ];
 
@@ -192,7 +193,7 @@ function NavList() {
           color="blue-gray"
           className="font-semibold font-montserrat"
           onClick={() => {
-            console.log(routeLink)
+            console.log(routeLink);
             router.push(`${routeLink}`);
           }}
         >
@@ -211,6 +212,7 @@ function NavList() {
 export default function ComplexNavbar() {
   const [isNavOpen, setIsNavOpen] = React.useState(false);
   const toggleIsNavOpen = () => setIsNavOpen((cur) => !cur);
+  const router = useRouter();
 
   React.useEffect(() => {
     window.addEventListener('resize', () => window.innerWidth >= 960 && setIsNavOpen(false));
@@ -219,8 +221,15 @@ export default function ComplexNavbar() {
   return (
     <Navbar className="mx-auto w-screen p-2 lg:rounded-full lg:my-5">
       <div className="relative mx-auto flex justify-between items-center text-blue-gray-900">
-        <Typography as="a" href="#" className="mr-4 ml-2 cursor-pointer py-1.5 font-medium font-montserrat">
-          WorkJoy
+        <Typography
+          as="a"
+          href="#"
+          className="mr-4 ml-5 text-2xl font-bolder cursor-pointer py-1.5 font-medium font-montserrat"
+          onClick={() => {
+            router.push('/');
+          }}
+        >
+          <AiOutlineHome />
         </Typography>
         <div className="absolute top-2/4 left-2/4 hidden -translate-x-2/4 -translate-y-2/4 lg:block">
           <NavList />
