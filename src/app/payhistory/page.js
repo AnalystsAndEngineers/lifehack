@@ -9,6 +9,16 @@ export default function PayHistory() {
     { date: 'March 2023', amount: '4800' },
     { date: 'Febuary 2023', amount: '4700' },
     { date: 'January 2023', amount: '4700' },
+    { date: 'December 2022', amount: '4700' },
+    { date: 'November 2022', amount: '4700' },
+    { date: 'October 2022', amount: '4700' },
+    { date: 'September 2022', amount: '4600' },
+    { date: 'August 2022', amount: '4600' },
+    { date: 'July 2022', amount: '4600' },
+    { date: 'June 2022', amount: '4600' },
+    { date: 'May 2022', amount: '4500' },
+    { date: 'April 2022', amount: '4500' },
+    { date: 'March 2022', amount: '4500' },
   ];
 
   const router = useRouter();
@@ -27,7 +37,7 @@ export default function PayHistory() {
       <div className="text-center font-semibold text-gray-900 text-3xl mb-10">
         <h1> Payment History</h1>
       </div>
-      <div>
+      <div className="overflow-auto max-h-[60vh]">
         <table class="w-4/12 mx-auto rounded-xl text-md text-center text-gray-800">
           <thead class="text-sm text-gray-700 uppercase bg-gray-50 ">
             <tr>
@@ -39,7 +49,7 @@ export default function PayHistory() {
               </th>
             </tr>
           </thead>
-          <tbody>
+          <tbody className="">
             {data.map((item, index) => (
               <tr key={index} class="bg-white border-b ">
                 <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
