@@ -1,7 +1,10 @@
+'use client';
+import EditForm from './components/editForm';
+
 export default function EditProfile() {
   return (
     <div>
-      <h1>edit profile</h1>
+      <EditForm />
     </div>
   );
 }
