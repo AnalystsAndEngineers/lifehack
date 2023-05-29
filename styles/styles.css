@@ -1,0 +1,10 @@
+.bg-image {
+  background-image: url('../public/brooke-cagle-g1Kr4Ozfoac-unsplash.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.blur-bg {
+  backdrop-filter: blur(30px);
+  background-color: rgba(0, 0, 0, 0.5);
+}
