@@ -17,7 +17,7 @@ export default function RootLayout({ children }) {
     <ThemeProvider>
       <html lang="en">
         <body className={montserrat.className}>
-          <main className="mx-32 md:mx-16">
+          <main>
             <ComplexNavbar />
             {children}
           </main>

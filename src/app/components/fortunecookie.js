@@ -23,7 +23,7 @@ export default function FortuneCookie() {
 
     return (
         <div className="text-center p-16">
-            <Typography variant="h5" className="font-montserrat font-normal">{quote}</Typography>
+            <Typography variant="h5" className="font-montserrat font-normal">{'"'}{quote}{'"'}</Typography>
             <FaDiceD6 className="cursor-pointer text-2xl mx-auto my-5 hover:animate-spin text-cyan-600" onClick={newQuote}/>
         </div>
     );
