@@ -27,7 +27,7 @@ export default function EmployeeSearch() {
           ) : (
             <ul className="p-3">
               {filteredData.map((item, index) => (
-                <li key={index} className="py-2 lg:py-5 lg:text-lg">
+                <li key={index} className=" p-2 lg:p-5 lg:text-lg">
                   <p>
                     <span className="font-medium mr-16">Name:</span> {item.name}
                   </p>

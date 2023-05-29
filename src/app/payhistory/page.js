@@ -1,21 +1,25 @@
-"use client";
-import { useRouter } from "next/navigation";
-import { IoIosArrowBack } from "react-icons/io";
+'use client';
+import { useRouter } from 'next/navigation';
+import { IoIosArrowBack } from 'react-icons/io';
 
 export default function PayHistory() {
+  const data = [
+    { date: 'May 2023', amount: '4800' },
+    { date: 'April 2023', amount: '4800' },
+    { date: 'March 2023', amount: '4800' },
+    { date: 'Febuary 2023', amount: '4700' },
+    { date: 'January 2023', amount: '4700' },
+  ];
+
   const router = useRouter();
   function handleClick() {
-    router.push("/");
+    router.push('/');
   }
   return (
     <div>
       <div className="text-4xl font-semibold mx-10 my-8 text-gray-800">
-        <button
-          className="hover:text-gray-400"
-          type="button"
-          onClick={handleClick}
-        >
-          {" "}
+        <button className="hover:text-gray-400" type="button" onClick={handleClick}>
+          {' '}
           <IoIosArrowBack />
         </button>
       </div>
@@ -36,45 +40,14 @@ export default function PayHistory() {
             </tr>
           </thead>
           <tbody>
-            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-              <th
-                scope="row"
-                class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
-              >
-                June 2023
-              </th>
-              <td class="px-6 py-4">$4800</td>
-            </tr>
-
-            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-              <th
-                scope="row"
-                class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
-              >
-                May 2023
-              </th>
-              <td class="px-6 py-4">$4800</td>
-            </tr>
-
-            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-              <th
-                scope="row"
-                class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
-              >
-                April 2023
-              </th>
-              <td class="px-6 py-4">$4800</td>
-            </tr>
-
-            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-              <th
-                scope="row"
-                class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
-              >
-                March 2023
-              </th>
-              <td class="px-6 py-4">$4700</td>
-            </tr>
+            {data.map((item, index) => (
+              <tr key={index} class="bg-white border-b ">
+                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+                  {item.date}
+                </th>
+                <td class="px-6 py-4">${item.amount}</td>
+              </tr>
+            ))}
           </tbody>
         </table>
       </div>
