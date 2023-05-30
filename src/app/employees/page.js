@@ -6,7 +6,7 @@ import SearchBar from './components/searchbar';
 import { BiSearchAlt2 } from 'react-icons/bi';
 
 export default function EmployeeSearch() {
-  const [data, setData] = useState([
+  const data = [
     { name: 'John Doe', department: 'HR', email: 'john@gmail.com' },
     { name: 'Jane Tan', department: 'IT', email: 'jane@gmail.com' },
     { name: 'Michael Johnson', department: 'Marketing', email: 'michael@gmail.com' },
@@ -27,7 +27,7 @@ export default function EmployeeSearch() {
     { name: 'Michael Johnson', department: 'Marketing', email: 'michael@gmail.com' },
     { name: 'Emily Davis', department: 'Finance', email: 'emily@gmail.com' },
     { name: 'David Williams', department: 'HR', email: 'david@gmail.com' },
-  ]);
+  ];
   const [filteredData, setFilteredData] = useState(data);
 
   const handleFilteredData = (filteredData) => {

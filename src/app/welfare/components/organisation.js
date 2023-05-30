@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 
-export default function Organisation({ title, desc, imageSrc, routeLink }) {
+export default function Organisation() {
   const [hydrated, setHydrated] = useState(false);
   useEffect(() => {
     // This forces a rerender, so the date is rendered

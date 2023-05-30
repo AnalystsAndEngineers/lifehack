@@ -27,32 +27,32 @@ export default function PayHistory() {
   }
   return (
     <div>
-      <div className="text-4xl font-semibold mx-10 my-8 text-gray-800">
+      <div className="mx-10 my-8 text-4xl font-semibold text-gray-800">
         <button className="hover:text-gray-400" type="button" onClick={handleClick}>
           {' '}
           <IoIosArrowBack />
         </button>
       </div>
 
-      <div className="text-center font-semibold text-gray-900 text-3xl mb-10">
+      <div className="mb-10 text-center text-3xl font-semibold text-gray-900">
         <h1> Payment History</h1>
       </div>
-      <div className="overflow-auto max-h-[60vh]">
-        <table className="w-4/12 mx-auto rounded-xl text-md text-center text-gray-800">
-          <thead className="text-sm text-gray-700 uppercase bg-gray-50 ">
+      <div className="max-h-[60vh] overflow-auto">
+        <table className="text-md mx-auto w-4/12 rounded-xl text-center text-gray-800">
+          <thead className="bg-gray-50 text-sm uppercase text-gray-700 ">
             <tr>
-              <th scope="col" className="px-6 py-3 border-b">
+              <th scope="col" className="border-b px-6 py-3">
                 Date
               </th>
-              <th scope="col" className="px-6 py-3 border-b">
+              <th scope="col" className="border-b px-6 py-3">
                 Amount
               </th>
             </tr>
           </thead>
           <tbody className="">
             {data.map((item, index) => (
-              <tr key={index} className="bg-white border-b ">
-                <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+              <tr key={index} className="border-b bg-white ">
+                <th scope="row" className="whitespace-nowrap px-6 py-4 font-medium text-gray-900">
                   {item.date}
                 </th>
                 <td className="px-6 py-4">${item.amount}</td>

@@ -38,7 +38,7 @@ export default function CompanyCalendar({ events }) {
 
         {selectedEvent && (
           <div className="fixed inset-0 z-50 flex items-center justify-center bg-gray-800 bg-opacity-50">
-            <div className="rounded bg-white p-8 shadow-lg max-w-screen-2xl">
+            <div className="max-w-screen-2xl rounded bg-white p-8 shadow-lg">
               <h3 className="mb-4 text-2xl font-bold">{selectedEvent.title}</h3>
               <p className="mb-2 text-gray-600">
                 <span className="font-bold">Date: </span>

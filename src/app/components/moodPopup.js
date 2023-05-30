@@ -16,7 +16,8 @@ function MoodPopup() {
     { emoji: '😴', label: 'Sleepy' },
     { emoji: '😟', label: 'Worried' },
   ];
-  const [chosenMood, setChosenMood] = useState(null);
+  // eslint-disable-next-line no-unused-vars
+  const [_, setChosenMood] = useState(null);
   const [moodDescription, setMoodDescription] = useState(null);
   const handleMoodSelection = (mood) => {
     setMoodDescription(mood);
