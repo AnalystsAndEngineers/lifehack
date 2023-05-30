@@ -1,11 +1,9 @@
-'use client';
-
 import Card from './components/card';
 import AnnouncementHeader from './components/announcementHeader';
 import FortuneCookie from './components/fortunecookie';
 import CompanyCalendar from './components/companyCalendar';
 import MoodPopup from './components/moodPopup';
-import { useState } from 'react';
+import { store } from '@/lib/store';
 
 const events = [
   {
@@ -43,10 +41,11 @@ const events = [
 ];
 
 export default function Home() {
-  const [chosenMood, setChosenMood] = useState(null);
+  const userMood = store.get('userMood');
+  console.log(store.get('userMood'));
   return (
     <main>
-      {!chosenMood && <MoodPopup mood={chosenMood} setChosenMood={setChosenMood} />}
+      {!userMood && <MoodPopup />}
       <CompanyCalendar events={events} />
       <AnnouncementHeader
         title="Company retreat at Yishun SAFRA"
