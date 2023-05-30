@@ -28,6 +28,11 @@ import { AiOutlineHome } from 'react-icons/ai';
 
 import { useRouter } from 'next/navigation';
 
+import firebaseApp from '../firebase';
+import { getFirestore } from 'firebase/firestore';
+import { doc, setDoc, updateDoc, getDoc, collection, addDoc, getDocs } from "firebase/firestore";
+const db = getFirestore(firebaseApp)
+
 // profile menu component
 const profileMenuItems = [
   {
@@ -98,20 +103,33 @@ function ProfileMenu() {
   );
 }
 
-const announcements = [
-  {
-    title: 'Announcement 1',
-    description: 'Learn how to use @material-tailwind/html, packed with rich components and widgets.',
-  },
-  {
-    title: '@material-tailwind/react',
-    description: 'Learn how to use @material-tailwind/react, packed with rich components for React.',
-  },
-  {
-    title: 'Material Tailwind PRO',
-    description: 'A complete set of UI Elements for building faster websites in less time.',
-  },
-];
+let announcements = []
+const getAnnouncements = async () =>  {
+  let announcementsDocs = await getDocs(collection(db, "announcements"))
+  announcementsDocs.forEach((doc) => {
+    console.log(doc.id, ": ", doc.data())
+    announcements.push({
+      title: doc.data().title,
+      description: doc.data().description,
+    })
+  })
+}
+getAnnouncements();
+
+// const announcements = [
+//   {
+//     title: 'Announcement 1',
+//     description: 'Learn how to use @material-tailwind/html, packed with rich components and widgets.',
+//   },
+//   {
+//     title: '@material-tailwind/react',
+//     description: 'Learn how to use @material-tailwind/react, packed with rich components for React.',
+//   },
+//   {
+//     title: 'Material Tailwind PRO',
+//     description: 'A complete set of UI Elements for building faster websites in less time.',
+//   },
+// ];
 
 function NavListMenu() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
