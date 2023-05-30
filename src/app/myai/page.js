@@ -9,13 +9,14 @@ export default function MyAI() {
   const [isLoading, setIsLoading] = useState(false);
   const [buttonText, setButtonText] = useState('Generate schedule');
   const [data, setData] = useState([]);
-  const [isButtonDisabled, setIsButtonDisabled] = useState(false);
+  // eslint-disable-next-line no-unused-vars
+  const [_, setIsButtonDisabled] = useState(false);
 
   useEffect(() => {
     return () => {
       clearTimeout(timerId);
     };
-  }, []);
+  }, [timerId]);
 
   const rateLimitDuration = 5000; // Set the rate limit duration in milliseconds
   let timerId = null;

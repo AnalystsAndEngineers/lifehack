@@ -1,22 +1,22 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 
 export default function SearchBar({ data, onFilteredData }) {
   const [searchQuery, setSearchQuery] = useState('');
 
   useEffect(() => {
     handleSearch();
-  }, [searchQuery]);
+  }, [searchQuery, handleSearch]);
 
-  const handleSearch = () => {
+  const handleSearch = useCallback(() => {
     const filteredData = data.filter((item) =>
       Object.values(item).some(
         (value) => typeof value === 'string' && value.toLowerCase().includes(searchQuery.toLowerCase())
       )
     );
     onFilteredData(filteredData);
-  };
+  }, [data, onFilteredData, searchQuery]);
 
   const handleInputChange = (event) => {
     setSearchQuery(event.target.value);

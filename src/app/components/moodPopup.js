@@ -1,7 +1,7 @@
 'use client';
 import { useState } from 'react';
 
-function MoodPopup({ chosenMood, setChosenMood }) {
+function MoodPopup({ setChosenMood }) {
   const moodOptions = [
     { emoji: '😊', label: 'Happy' },
     { emoji: '😔', label: 'Sad' },

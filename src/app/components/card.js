@@ -1,6 +1,5 @@
 'use client';
 
-import { AiOutlinePlus } from 'react-icons/ai';
 import { useRouter } from 'next/navigation';
 
 export default function Card({ title, indicator, desc, routeLink, btnText }) {
@@ -16,7 +15,9 @@ export default function Card({ title, indicator, desc, routeLink, btnText }) {
           <h1 className="pt-5 text-4xl font-semibold text-cyan-600 lg:text-7xl lg:font-bold ">{indicator}</h1>
           <h1 className="pt-5 text-lg font-semibold lg:text-2xl">{desc}</h1>
         </div>
-        <div onClick={handleClick} className="mt-4 text-sm cursor-pointer text-gray-500 hover:text-black">{btnText}</div>
+        <div onClick={handleClick} className="mt-4 cursor-pointer text-sm text-gray-500 hover:text-black">
+          {btnText}
+        </div>
       </div>
     </div>
   );

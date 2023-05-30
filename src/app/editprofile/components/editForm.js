@@ -8,14 +8,14 @@ export default function editForm() {
   }
   return (
     <form>
-      <div className="px-14 py-1 lg:py-20 lg:px-48">
+      <div className="px-14 py-1 lg:px-48 lg:py-20">
         <div className=" border-gray-900/10 pb-12">
-          <h2 className="mt-20 lg:mt-5 text-center text-xl lg:text-xl font-medium leading-7 text-gray-800">
+          <h2 className="mt-20 text-center text-xl font-medium leading-7 text-gray-800 lg:mt-5 lg:text-xl">
             Personal Details
           </h2>
 
-          <div className="block mt-10 w-8/12 mx-auto">
-            <div className="sm:col-span-3 py-5">
+          <div className="mx-auto mt-10 block w-8/12">
+            <div className="py-5 sm:col-span-3">
               <label htmlFor="first-name" className="block text-sm font-medium leading-6 text-gray-900">
                 Full Name
               </label>
@@ -30,7 +30,7 @@ export default function editForm() {
               </div>
             </div>
 
-            <div className="sm:col-span-3 py-5">
+            <div className="py-5 sm:col-span-3">
               <label htmlFor="last-name" className="block text-sm font-medium leading-6 text-gray-900">
                 Department
               </label>
@@ -45,7 +45,7 @@ export default function editForm() {
               </div>
             </div>
 
-            <div className="sm:col-span-3 py-5">
+            <div className="py-5 sm:col-span-3">
               <label htmlFor="last-name" className="block text-sm font-medium leading-6 text-gray-900">
                 Email Address
               </label>
@@ -74,7 +74,7 @@ export default function editForm() {
         <button
           type="submit"
           onClick={handleClick}
-          className="rounded-md px-3 py-2 text-md font-semibold text-blue-900 hover:text-gray-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+          className="text-md rounded-md px-3 py-2 font-semibold text-blue-900 hover:text-gray-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
         >
           <u>Save</u>
         </button>

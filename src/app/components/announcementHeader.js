@@ -1,16 +1,16 @@
-"use client";
+'use client';
 
-import { HiOutlineBell } from "react-icons/hi";
+import { HiOutlineBell } from 'react-icons/hi';
 
 export default function AnnouncementHeader({ title, desc }) {
-    return (
-      <div className="my-10">
-        <div className="text-center font-semibold text-cyan-800">Announcement of the day</div>
-        <div className="bg-cyan-50 text-center p-4 text-gray-800 my-5 mx-auto w-9/12 border border-gray-200 rounded-xl shadow-md flex flex-col max-h-72">
-            <HiOutlineBell className="mx-auto text-3xl text-center text-cyan-700 " />
-            <h1 className="font-semibold text-l my-2">{title}</h1>
-            <p className="text-sm px-5 max-h-32 overflow-hidden overflow-ellipsis hover:overflow-auto">{desc}</p>
-        </div>
-        </div>
-    );
+  return (
+    <div className="my-10">
+      <div className="text-center font-semibold text-cyan-800">Announcement of the day</div>
+      <div className="mx-auto my-5 flex max-h-72 w-9/12 flex-col rounded-xl border border-gray-200 bg-cyan-50 p-4 text-center text-gray-800 shadow-md">
+        <HiOutlineBell className="mx-auto text-center text-3xl text-cyan-700 " />
+        <h1 className="text-l my-2 font-semibold">{title}</h1>
+        <p className="max-h-32 overflow-hidden overflow-ellipsis px-5 text-sm hover:overflow-auto">{desc}</p>
+      </div>
+    </div>
+  );
 }

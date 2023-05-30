@@ -28,7 +28,7 @@ export default function Form() {
         <div className="">
           <div className="">
             <div className=" border-gray-900/10 pb-12">
-              <h2 className=" text-xl lg:text-2xl font-semibold leading-7 text-gray-900">Apply Leave</h2>
+              <h2 className=" text-xl font-semibold leading-7 text-gray-900 lg:text-2xl">Apply Leave</h2>
 
               <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
                 <div className="sm:col-span-3">
@@ -64,13 +64,13 @@ export default function Form() {
             </div>
 
             <div className="col-span-full">
-              <label htmlFor="countries" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+              <label htmlFor="countries" className="mb-2 block text-sm font-medium text-gray-900 dark:text-white">
                 Select type of leave
               </label>
               <select
                 defaultValue={'DEFAULT'}
                 id="leaves"
-                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
               >
                 <option valur="DEFAULT">Please Select</option>
                 <option value="MC">Medical Certificate</option>
@@ -78,7 +78,7 @@ export default function Form() {
               </select>
             </div>
 
-            <div className="mt-10 col-span-full">
+            <div className="col-span-full mt-10">
               <label htmlFor="MC-photo" className="block text-sm font-medium leading-6 text-gray-900">
                 Medical Certificate
               </label>
@@ -113,7 +113,7 @@ export default function Form() {
         <button
           type="submit"
           onClick={handleClick}
-          className="rounded-md px-3 py-2 text-md font-semibold text-blue-900 hover:text-gray-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+          className="text-md rounded-md px-3 py-2 font-semibold text-blue-900 hover:text-gray-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
         >
           <u>Submit</u>
         </button>

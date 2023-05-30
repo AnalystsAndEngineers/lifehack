@@ -10,7 +10,7 @@ export default function ApplyLeave() {
   }
   return (
     <div>
-      <div className="text-4xl font-semibold mx-10 my-8 text-gray-800">
+      <div className="mx-10 my-8 text-4xl font-semibold text-gray-800">
         <button className="hover:text-gray-400" type="button" onClick={handleClick}>
           {' '}
           <IoIosArrowBack />
