@@ -10,7 +10,7 @@ export async function POST(request) {
     content += task.value + '. ';
   });
   const configuration = new Configuration({
-    apiKey: process.env.NEXT_PUBLIC_SECRET_KEY,
+    apiKey: process.env.OPEN_AI_SECRET_KEY,
   });
   const openai = new OpenAIApi(configuration);
 
