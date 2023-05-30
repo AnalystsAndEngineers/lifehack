@@ -2,14 +2,34 @@
 import { useRouter } from 'next/navigation';
 import { IoIosArrowBack } from 'react-icons/io';
 
+import firebaseApp from '../firebase';
+import { getFirestore } from 'firebase/firestore';
+import { doc, setDoc, updateDoc, getDoc, collection, addDoc, getDocs } from "firebase/firestore";
+const db = getFirestore(firebaseApp)
+
+let data = []
+const getPay = async () =>  {
+  let payDocs = await getDocs(collection(db, "paychecks"))
+  payDocs.forEach((doc) => {
+    console.log(doc.id, ": ", doc.data())
+    data.push({
+      date: String(String(doc.data().month) + "/" + String(doc.data().year)),
+      amount: String(doc.data().amount)
+    })
+  })
+  console.log(data)
+}
+getPay();
+
 export default function PayHistory() {
-  const data = [
-    { date: 'May 2023', amount: '4800' },
-    { date: 'April 2023', amount: '4800' },
-    { date: 'March 2023', amount: '4800' },
-    { date: 'Febuary 2023', amount: '4700' },
-    { date: 'January 2023', amount: '4700' },
-  ];
+
+  // const data = [
+  //   { date: 'May 2023', amount: '4800' },
+  //   { date: 'April 2023', amount: '4800' },
+  //   { date: 'March 2023', amount: '4800' },
+  //   { date: 'Febuary 2023', amount: '4700' },
+  //   { date: 'January 2023', amount: '4700' },
+  // ];
 
   const router = useRouter();
   function handleClick() {
