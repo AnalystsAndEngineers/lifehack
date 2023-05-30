@@ -12,14 +12,14 @@ export default function MyAI() {
   // eslint-disable-next-line no-unused-vars
   const [_, setIsButtonDisabled] = useState(false);
 
+  const rateLimitDuration = 5000; // Set the rate limit duration in milliseconds
+  let timerId = null;
+
   useEffect(() => {
     return () => {
       clearTimeout(timerId);
     };
   }, [timerId]);
-
-  const rateLimitDuration = 5000; // Set the rate limit duration in milliseconds
-  let timerId = null;
 
   const handleChange = (index, event) => {
     const values = [...fields];

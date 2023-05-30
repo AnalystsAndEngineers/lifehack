@@ -33,7 +33,6 @@ let announcements = [];
 const getAnnouncements = async () => {
   let announcementsDocs = await getDocs(collection(db, 'announcements'));
   announcementsDocs.forEach((doc) => {
-    console.log(doc.id, ': ', doc.data());
     announcements.push({
       title: doc.data().title,
       description: doc.data().description,
@@ -132,7 +131,6 @@ function NavList() {
           color="blue-gray"
           className="font-montserrat font-semibold"
           onClick={() => {
-            console.log(routeLink);
             router.push(`${routeLink}`);
           }}
         >

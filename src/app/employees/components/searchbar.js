@@ -5,10 +5,6 @@ import React, { useCallback, useEffect, useState } from 'react';
 export default function SearchBar({ data, onFilteredData }) {
   const [searchQuery, setSearchQuery] = useState('');
 
-  useEffect(() => {
-    handleSearch();
-  }, [searchQuery, handleSearch]);
-
   const handleSearch = useCallback(() => {
     const filteredData = data.filter((item) =>
       Object.values(item).some(
@@ -16,7 +12,12 @@ export default function SearchBar({ data, onFilteredData }) {
       )
     );
     onFilteredData(filteredData);
-  }, [data, onFilteredData, searchQuery]);
+  }, [data, searchQuery, onFilteredData]);
+
+  useEffect(() => {
+    handleSearch();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [searchQuery]);
 
   const handleInputChange = (event) => {
     setSearchQuery(event.target.value);

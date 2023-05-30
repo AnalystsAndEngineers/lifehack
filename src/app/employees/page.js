@@ -1,5 +1,5 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useCallback, useState } from 'react';
 
 import SearchBar from './components/searchbar';
 
@@ -30,9 +30,12 @@ export default function EmployeeSearch() {
   ];
   const [filteredData, setFilteredData] = useState(data);
 
-  const handleFilteredData = (filteredData) => {
-    setFilteredData(filteredData);
-  };
+  const handleFilteredData = useCallback(
+    (filteredData) => {
+      setFilteredData(filteredData);
+    },
+    [setFilteredData]
+  );
 
   return (
     <div className="max-h-screen text-sm">

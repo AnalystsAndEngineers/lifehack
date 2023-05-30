@@ -12,7 +12,6 @@ let events = [];
 const getEvents = async () => {
   let eventsDocs = await getDocs(collection(db, 'events'));
   eventsDocs.forEach((doc) => {
-    console.log(doc.id, ': ', doc.data());
     let start = new Date(doc.data().start_datetime.seconds * 1000);
     let end = new Date(doc.data().end_datetime.seconds * 1000);
     events.push({
@@ -33,9 +32,6 @@ const getAnn = async () => {
   let annDocs = await getDocs(collection(db, 'announcements'));
   let latest = new Date(0).getMilliseconds();
   annDocs.forEach((doc) => {
-    console.log(doc.id, ': ', doc.data());
-    console.log(doc.data().creation_datetime.seconds);
-    console.log(doc.data().creation_datetime.seconds > latest);
     if (doc.data().creation_datetime.seconds > latest) {
       announcementTitle = doc.data().title;
       announcementDescr = doc.data().description;
@@ -50,7 +46,6 @@ import { store } from '@/lib/store';
 
 export default function Home() {
   const userMood = store.get('userMood');
-  console.log(store.get('userMood'));
   return (
     <main>
       {!userMood && <MoodPopup />}

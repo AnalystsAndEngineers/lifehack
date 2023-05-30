@@ -9,7 +9,6 @@ export async function POST(request) {
   data.forEach((task) => {
     content += task.value + '. ';
   });
-  console.log(content);
   const configuration = new Configuration({
     apiKey: process.env.NEXT_PUBLIC_SECRET_KEY,
   });
@@ -20,6 +19,5 @@ export async function POST(request) {
     messages: [{ role: 'user', content: content }],
   });
   const msg = completion.data.choices[0].message;
-  console.log(msg.content);
   return new Response(msg.content);
 }

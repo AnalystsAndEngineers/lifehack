@@ -9,6 +9,10 @@ export default function Feedback() {
   const [anonymity, setAnonymity] = useState('');
   const [isFormValid, setIsFormValid] = useState(false);
 
+  const validateForm = useCallback(() => {
+    const isValid = message.trim() !== '' && anonymity !== '';
+    setIsFormValid(isValid);
+  }, [message, anonymity]);
   useEffect(() => {
     validateForm();
   }, [message, anonymity, validateForm]);
@@ -20,11 +24,6 @@ export default function Feedback() {
   const handleAnonymityChange = (event) => {
     setAnonymity(event.target.value);
   };
-
-  const validateForm = useCallback(() => {
-    const isValid = message.trim() !== '' && anonymity !== '';
-    setIsFormValid(isValid);
-  }, [message, anonymity]);
 
   const handleSubmit = (event) => {
     event.preventDefault();
