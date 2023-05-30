@@ -12,7 +12,8 @@ npm install
 ```
 
 - Edit .env.example
-  Replace the neccessary variables and secret keys in the `.env.example` file and rename it to `.env`
+
+Replace the neccessary variables and secret keys in the `.env.example` file and rename it to `.env`
   
 - Build and run the project
 ```
