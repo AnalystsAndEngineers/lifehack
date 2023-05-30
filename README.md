@@ -11,7 +11,7 @@ cd <project_name>
 npm install
 ```
 
-- Edit .env.example
+- Edit `.env.example`
 
 Replace the neccessary variables and secret keys in the `.env.example` file and rename it to `.env`
   
