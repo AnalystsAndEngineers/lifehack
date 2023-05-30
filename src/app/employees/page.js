@@ -3,8 +3,25 @@ import React, { useState } from 'react';
 
 import SearchBar from './components/searchbar';
 
+import { BiSearchAlt2 } from 'react-icons/bi';
+
 export default function EmployeeSearch() {
   const [data, setData] = useState([
+    { name: 'John Doe', department: 'HR', email: 'john@gmail.com' },
+    { name: 'Jane Tan', department: 'IT', email: 'jane@gmail.com' },
+    { name: 'Michael Johnson', department: 'Marketing', email: 'michael@gmail.com' },
+    { name: 'Emily Davis', department: 'Finance', email: 'emily@gmail.com' },
+    { name: 'David Williams', department: 'HR', email: 'david@gmail.com' },
+    { name: 'John Doe', department: 'HR', email: 'john@gmail.com' },
+    { name: 'Jane Tan', department: 'IT', email: 'jane@gmail.com' },
+    { name: 'Michael Johnson', department: 'Marketing', email: 'michael@gmail.com' },
+    { name: 'Emily Davis', department: 'Finance', email: 'emily@gmail.com' },
+    { name: 'David Williams', department: 'HR', email: 'david@gmail.com' },
+    { name: 'John Doe', department: 'HR', email: 'john@gmail.com' },
+    { name: 'Jane Tan', department: 'IT', email: 'jane@gmail.com' },
+    { name: 'Michael Johnson', department: 'Marketing', email: 'michael@gmail.com' },
+    { name: 'Emily Davis', department: 'Finance', email: 'emily@gmail.com' },
+    { name: 'David Williams', department: 'HR', email: 'david@gmail.com' },
     { name: 'John Doe', department: 'HR', email: 'john@gmail.com' },
     { name: 'Jane Tan', department: 'IT', email: 'jane@gmail.com' },
     { name: 'Michael Johnson', department: 'Marketing', email: 'michael@gmail.com' },
@@ -18,25 +35,30 @@ export default function EmployeeSearch() {
   };
 
   return (
-    <div>
-      <SearchBar data={data} onFilteredData={handleFilteredData} />
+    <div className="max-h-screen text-sm">
       <div className="flex justify-center">
-        <ul className=" mt-7 ">
+        <h1 className="mt-10 text-center text-xl font-semibold lg:text-2xl">Employee Directory</h1>
+        <BiSearchAlt2 className="ml-2 mt-11 text-xl lg:text-2xl" />
+      </div>
+
+      <SearchBar data={data} onFilteredData={handleFilteredData} />
+      <div className="mx-auto mt-6 max-h-[70vh] max-w-screen-xl overflow-auto px-5">
+        <ul className="mt-7">
           {filteredData.length === 0 ? (
-            <p className="text-gray-500 mt-2">No employees found</p>
+            <p className="mt-2 text-center text-gray-500">No employees found</p>
           ) : (
-            <ul className="p-3">
+            <ul className="m-auto p-3">
               {filteredData.map((item, index) => (
-                <li key={index} className=" p-2 lg:p-5 lg:text-lg">
-                  <p>
-                    <span className="font-medium mr-16">Name:</span> {item.name}
+                <li key={index} className="border-b-2 p-2 lg:flex lg:justify-center lg:py-5 lg:text-base">
+                  <p className="w-80">
+                    <span className="font-medium">Name:</span> {item.name}
                   </p>
-                  <span className="font-medium mr-3">Department:</span> {item.department}
-                  <p>
-                    {' '}
-                    <span className="font-medium mr-16">Email:</span> {item.email}
+                  <p className="w-80">
+                    <span className="font-medium">Department:</span> {item.department}
                   </p>
-                  <hr />
+                  <p className="w-80">
+                    <span className="font-medium">Email:</span> {item.email}
+                  </p>
                 </li>
               ))}
             </ul>

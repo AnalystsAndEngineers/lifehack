@@ -4,8 +4,8 @@ import { HiOutlineBell } from "react-icons/hi";
 
 export default function AnnouncementHeader({ title, desc }) {
     return (
-      <div>
-        <div className="text-center font-semibold text-cyan-800">Announcements</div>
+      <div className="my-10">
+        <div className="text-center font-semibold text-cyan-800">Announcement of the day</div>
         <div className="bg-cyan-50 text-center p-4 text-gray-800 my-5 mx-auto w-9/12 border border-gray-200 rounded-xl shadow-md flex flex-col max-h-72">
             <HiOutlineBell className="mx-auto text-3xl text-center text-cyan-700 " />
             <h1 className="font-semibold text-l my-2">{title}</h1>

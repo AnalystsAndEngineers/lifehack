@@ -1,8 +1,10 @@
-import ComplexNavbar from './components/complexNavbar';
+'use client';
+
 import Card from './components/card';
 import AnnouncementHeader from './components/announcementHeader';
 import FortuneCookie from './components/fortunecookie';
 import CompanyCalendar from './components/companyCalendar';
+
 import { BiHistory } from 'react-icons/bi';
 
 import firebaseApp from './firebase';
@@ -47,17 +49,21 @@ const getAnn = async () =>  {
 }
 getAnn();
 
+import MoodPopup from './components/moodPopup';
+import { useState } from 'react';
 
 export default function Home() {
+  const [chosenMood, setChosenMood] = useState(null);
   return (
     <main>
+      {!chosenMood && <MoodPopup mood={chosenMood} setChosenMood={setChosenMood} />}
       <CompanyCalendar events={events} />
       <AnnouncementHeader
         title={announcementTitle}
         desc={announcementDescr}
       />
-      <div className='text-center font-semibold text-cyan-800'>Benefits</div>
-      <div className="block lg:flex">
+      <div className="text-center font-semibold text-cyan-800">Benefits</div>
+      <div className="mb-10 block lg:flex">
         <Card title="Paycheck in" indicator="10" desc="more days" routeLink="/payhistory" btnText="View history" />
         <Card title="Off Days" indicator="2" desc="remaining" routeLink="/applyleave" btnText="Apply now" />
         <Card title="MCs" indicator="3" desc="remaining" routeLink="/applyleave" btnText="Apply now" />
