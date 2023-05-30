@@ -3,17 +3,18 @@
 # Getting started
 - Clone the repository
 ```
-git clone  <git lab template url> <project_name>
+gh repo clone AnalystsAndEngineers/lifehack
 ```
 - Install dependencies
 ```
-cd <project_name>
+cd lifehack
 npm install
 ```
 
 - Edit `.env.example`
 
 Replace the neccessary variables and secret keys in the `.env.example` file and rename it to `.env`
+You would require SGID keys, firebase keys and OpenAI key.
   
 - Build and run the project
 ```
